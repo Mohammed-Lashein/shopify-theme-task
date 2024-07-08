@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nav-background: rgb(40, 40, 40);
+  --nav-color: white;
+  --nav-padding-x: 40px;
+  --nav-padding-y: 20px;
+  --nav-txt-row-gap: 32px;
+  /* --transition: 1s ease-in-out; */
+}
+
+body {
+  font-family: sans-serif;
+}
+@layer utilities {
+  /* .custom-transition {
+    transition-property: width;
+    transition: var(--transition);
+  } */
+  
+}
+
+/* navbar transition  */
+/* li {
+  position: relative;
+}
+
+li::after {
+  content: "";
+  transform-origin: right; 
+  background-color: currentColor;
+  width: 100%;
+  height: 1px;
+  transition: transform .2s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+}
+li:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+} */
+
+.mobile-menu {
+  transition: transform .6s cubic-bezier(.75,0,.175,1), opacity .6s cubic-bezier(.75,0,.175,1);
+}
+.animated-plus {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+.animated-plus::before,
+.animated-plus::after {
+  content: "";
+  background-color: currentColor;
+  transition: transform .4s ease-in-out, opacity .4s ease-in-out;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%) rotate(-90deg); */
+  transform: translate(-50%, -50%);
+}
+.animated-plus::before {
+  opacity: 1;
+  width: 10px;
+  height: 2px;
+  /* this is the horizontal bar initially, but the vertical bar after the rotation */
+}
+.animated-plus::after {
+  opacity: 1;
+  height: 10px;
+  width: 2px;
+  /* this is the vertical bar, but the horizontal bar after rotation */
+}
+.animated-plus.open {
+  transform: rotate(360deg);
+  transform: rotate(180deg);
+}
+.animated-plus.open::after {
+  opacity: 0;
+}
+
+/* .animate-plus::before {
+  transform: rotate(0deg);
+} */
+
+
