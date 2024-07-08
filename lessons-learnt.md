@@ -1,0 +1,5 @@
+## Here I write the lessons I learnt throughout the project 
+
+1. It almost took me 2 hours to figure it out : In the desktop navbar,  If the classes were added on the li instead of the anchor tag, the pseudo element would appear with a flickering in the bg-color (the color starts faint then darkens after the transition end, which is against the design and is also bad visually) .
+
+2. On using left and right on an element that is applying position: absolute , the behavior -from the docs- : "When both left and right are defined, and width constraints don't prevent it, the element will stretch to satisfy both. If the element cannot stretch to satisfy both, the position of the element is overspecified. When this is the case, the left value has precedence when the container is left-to-right; the right value has precedence when the container is right-to-left."

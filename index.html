@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Shopify theme</title>
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body class=''>
+  <!-- mobile navbar -->
+  <nav
+    class='flex xl:hidden px-[--nav-padding-x] py-[--nav-padding-y] items-center justify-between bg-[--nav-background] text-white'
+  >
+  <section class='flex gap-5'>
+    <button class='text-white'>
+      <!-- burger menu icon -->
+      <svg
+        focusable="false"
+        width="18"
+        height="14"
+        class="icon icon--header-hamburger   "
+        viewBox="0 0 18 14"
+      >
+        <path
+          d="M0 1h18M0 13h18H0zm0-6h18H0z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        ></path>
+      </svg>
+    </button>
+    <button>
+                <!-- search glass  -->
+                <svg
+                focusable="false"
+                width="18"
+                height="18"
+                class="icon icon--header-search   "
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M12.336 12.336c2.634-2.635 2.682-6.859.106-9.435-2.576-2.576-6.8-2.528-9.435.106C.373 5.642.325 9.866 2.901 12.442c2.576 2.576 6.8 2.528 9.435-.106zm0 0L17 17"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                ></path>
+              </svg>    
+    </button>
+  </section>
+
+  <section class='h-[19px]'>
+    <a href="">
+      <img
+        src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/logo-focal.png?v=1630492228"
+        alt=""
+        height='84'
+        style='max-width: 95px; height: auto; display: block;'
+      >
+    </a>
+  </section>
+
+  <section>
+    <ul class='flex gap-6 *:cursor-pointer'>
+      <li class='hidden md:block'>
+        <!-- email el -->
+        <svg
+          focusable="false"
+          width="20"
+          height="16"
+          class="icon icon--header-email   "
+          viewBox="0 0 20 16"
+        >
+          <path
+            d="M19 4l-9 5-9-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          ></path>
+          <path
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            d="M1 1h18v14H1z"
+          ></path>
+        </svg>
+      </li>
+      <li class='hidden md:block'>
+        <!-- user account -->
+        <svg
+          focusable="false"
+          width="18"
+          height="17"
+          class="icon icon--header-customer   "
+          viewBox="0 0 18 17"
+        >
+          <circle
+            cx="9"
+            cy="5"
+            r="4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linejoin="round"
+          ></circle>
+          <path
+            d="M1 17v0a4 4 0 014-4h8a4 4 0 014 4v0"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          ></path>
+        </svg>
+      </li>
+      <li class='relative'>
+        <!-- shopping cart -->
+        <svg
+          focusable="false"
+          width="20"
+          height="18"
+          class="icon icon--header-cart   "
+          viewBox="0 0 20 18"
+        >
+          <path
+            d="M3 1h14l1 16H2L3 1z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          ></path>
+          <path
+            d="M7 4v0a3 3 0 003 3v0a3 3 0 003-3v0"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          ></path>
+        </svg>
+        <span
+          class='bg-white rounded-full absolute flex  justify-center items-center w-[21px] h-[21px] text-[9px] text-black -top-2 -right-[14px]'
+        >
+          0
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  </nav>
+
+
+  <!-- desktop navbar end -->
+  <nav
+    class='hidden xl:flex px-[--nav-padding-x] py-[--nav-padding-y] items-center justify-between bg-[--nav-background] text-white'
+  >
+    <section class='h-[19px]'>
+      <a href="">
+        <img
+          src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/logo-focal.png?v=1630492228"
+          alt=""
+          height='84'
+          style='max-width: 95px; height: auto; display: block;'
+        >
+      </a>
+    </section>
+
+    <section class='font-thin'>
+      <!-- *:last:mr-0  *:mr-[--nav-txt-row-gap]-->
+      <ul class='flex space-x-[--nav-txt-row-gap]'>
+        <!-- <li
+          class='after:w-0 relative after:absolute after:-bottom-1 after:bg-white after:h-[2px] hover:after:w-full after:custom-transition'
+        > -->
+
+        <li>
+          <a
+            href=""
+            class='relative after:origin-right after:bg-[currentColor] after:w-full after:h-[1px] after:transition-[transform] after:duration-[.3s] after:absolute after:-bottom-[2px] after:left-0 after:scale-x-0 hover:after:origin-left  hover:after:scale-x-100'
+          >
+            Shop by Category
+          </a>
+        </li>
+        <li>
+          <a
+            href=""
+            class='relative after:origin-right after:bg-[currentColor] after:w-full after:h-[1px] after:transition-[transform] after:duration-[.3s] after:absolute after:bottom-0 after:left-0 after:scale-x-0 hover:after:origin-left  hover:after:scale-x-100'
+          >
+            Shop by Device
+          </a>
+        </li>
+
+        <li><a
+            href=""
+            class='relative after:origin-right after:bg-[currentColor] after:w-full after:h-[1px] after:transition-[transform] after:duration-[.3s] after:absolute after:bottom-0 after:left-0 after:scale-x-0 hover:after:origin-left  hover:after:scale-x-100'
+          >
+            Collections
+          </a></li>
+        <li><a
+            href=""
+            class='relative after:origin-right after:bg-[currentColor] after:w-full after:h-[1px] after:transition-[transform] after:duration-[.3s] after:absolute after:bottom-0 after:left-0 after:scale-x-0 hover:after:origin-left  hover:after:scale-x-100'
+          >
+            Blog
+          </a></li>
+
+      </ul>
+    </section>
+
+    <section>
+      <ul class='flex gap-6 *:cursor-pointer'>
+        <li>
+          <!-- email el -->
+          <svg
+            focusable="false"
+            width="20"
+            height="16"
+            class="icon icon--header-email   "
+            viewBox="0 0 20 16"
+          >
+            <path
+              d="M19 4l-9 5-9-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+            <path
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              d="M1 1h18v14H1z"
+            ></path>
+          </svg>
+        </li>
+        <li>
+          <!-- search glass  -->
+          <svg
+            focusable="false"
+            width="18"
+            height="18"
+            class="icon icon--header-search   "
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M12.336 12.336c2.634-2.635 2.682-6.859.106-9.435-2.576-2.576-6.8-2.528-9.435.106C.373 5.642.325 9.866 2.901 12.442c2.576 2.576 6.8 2.528 9.435-.106zm0 0L17 17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </li>
+        <li>
+          <!-- user account -->
+          <svg
+            focusable="false"
+            width="18"
+            height="17"
+            class="icon icon--header-customer   "
+            viewBox="0 0 18 17"
+          >
+            <circle
+              cx="9"
+              cy="5"
+              r="4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linejoin="round"
+            ></circle>
+            <path
+              d="M1 17v0a4 4 0 014-4h8a4 4 0 014 4v0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </li>
+        <li class='relative'>
+          <!-- shopping cart -->
+          <svg
+            focusable="false"
+            width="20"
+            height="18"
+            class="icon icon--header-cart   "
+            viewBox="0 0 20 18"
+          >
+            <path
+              d="M3 1h14l1 16H2L3 1z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M7 4v0a3 3 0 003 3v0a3 3 0 003-3v0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+          </svg>
+          <span
+            class='bg-white rounded-full absolute flex  justify-center items-center w-[21px] h-[21px] text-[9px] text-black -top-2 -right-[14px]'
+          >
+            0
+          </span>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</body>
+
+</html>
