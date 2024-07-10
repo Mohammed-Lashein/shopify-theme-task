@@ -26,7 +26,7 @@
           focusable="false"
           width="18"
           height="14"
-          class="icon icon--header-hamburger   "
+          class="icon icon--header-hamburger "
           viewBox="0 0 18 14"
         >
           <path
@@ -43,7 +43,7 @@
           focusable="false"
           width="18"
           height="18"
-          class="icon icon--header-search   "
+          class="icon icon--header-search "
           viewBox="0 0 18 18"
         >
           <path
@@ -75,7 +75,7 @@
             focusable="false"
             width="20"
             height="16"
-            class="icon icon--header-email   "
+            class="icon icon--header-email "
             viewBox="0 0 20 16"
           >
             <path
@@ -98,7 +98,7 @@
             focusable="false"
             width="18"
             height="17"
-            class="icon icon--header-customer   "
+            class="icon icon--header-customer "
             viewBox="0 0 18 17"
           >
             <circle
@@ -124,7 +124,7 @@
             focusable="false"
             width="20"
             height="18"
-            class="icon icon--header-cart   "
+            class="icon icon--header-cart "
             viewBox="0 0 20 18"
           >
             <path
@@ -150,10 +150,10 @@
     </section>
   </nav>
 
-  <!-- <aside class='hidden drawer absolute top-0 w-screen h-screen'>
-    <span class='bg-black opacity-30 mobile-menu__overlay absolute top-0 w-screen h-screen'>
+  <!-- <aside class='absolute top-0 hidden w-screen h-screen drawer'>
+    <span class='absolute top-0 w-screen h-screen bg-black opacity-30 mobile-menu__overlay'>
     </span>
-      <div class='bg-white z-10 absolute w-1/2 h-full mobile-menu'>
+      <div class='absolute z-10 w-1/2 h-full bg-white mobile-menu'>
         <section class='px-10 py-6'>
           <button class='close-btn'>
             <svg
@@ -177,10 +177,10 @@
     </aside> -->
 
 
-  <aside class="hidden drawer absolute top-0 w-screen h-screen transition">
-    <span class="bg-black opacity-30 mobile-menu__overlay absolute top-0 w-screen h-screen"></span>
+  <aside class="absolute top-0 hidden w-screen h-screen drawer">
+    <span class="absolute top-0 w-screen h-screen bg-black opacity-30 mobile-menu__overlay"></span>
   </aside>
-  <div class="bg-white z-10 absolute w-1/2 h-full mobile-menu -translate-x-full top-0">
+  <div class="absolute top-0 z-10 block w-1/2 h-full -translate-x-full bg-white mobile-menu">
     <section class="px-10 py-6">
       <button class="close-btn">
         <!-- close btn -->
@@ -203,17 +203,49 @@
     </section>
 
     <section class='px-6'>
-      <button class='flex justify-between items-center animated-plus-btn w-full'>
-        <p class='font-bold uppercase '>
-          shop by category
-        </p>
-          <span class='animated-plus text-[18px]'></span>
-      </button>
+      <ul class='divide-y '>
+        <li class='py-[21px]'>
+          <button class='flex items-center justify-between w-full animated-plus-btn'>
+            <p class='font-bold uppercase '>
+              shop by category
+            </p>
+            <span class='animated-plus text-[18px]'></span>
+          </button>
+        </li>
+
+        <li class='py-[21px]'>
+          <button class='flex items-center justify-between w-full animated-plus-btn'>
+            <p class='font-bold uppercase '>
+              shop by device
+            </p>
+            <span class='animated-plus text-[18px]'></span>
+          </button>
+        </li>
+
+        <li class='py-[21px]'>
+          <button class='flex items-center justify-between w-full animated-plus-btn'>
+            <p class='font-bold uppercase '>
+              collections
+            </p>
+            <span class='animated-plus text-[18px]'></span>
+          </button>
+        </li>
+
+        <li class='py-[21px]'>
+          <button class='flex items-center justify-between w-full animated-plus-btn'>
+            <p class='font-bold uppercase '>
+              more
+            </p>
+            <span class='animated-plus text-[18px]'></span>
+          </button>
+        </li>
+
+      </ul>
     </section>
   </div>
 
 
-  <!-- desktop navbar end -->
+  <!-- desktop navbar start -->
   <nav
     class='hidden xl:flex px-[--nav-padding-x] py-[--nav-padding-y] items-center justify-between bg-[--nav-background] text-white'
   >
@@ -276,7 +308,7 @@
             focusable="false"
             width="20"
             height="16"
-            class="icon icon--header-email   "
+            class="icon icon--header-email "
             viewBox="0 0 20 16"
           >
             <path
@@ -299,7 +331,7 @@
             focusable="false"
             width="18"
             height="18"
-            class="icon icon--header-search   "
+            class="icon icon--header-search "
             viewBox="0 0 18 18"
           >
             <path
@@ -316,7 +348,7 @@
             focusable="false"
             width="18"
             height="17"
-            class="icon icon--header-customer   "
+            class="icon icon--header-customer "
             viewBox="0 0 18 17"
           >
             <circle
@@ -342,7 +374,7 @@
             focusable="false"
             width="20"
             height="18"
-            class="icon icon--header-cart   "
+            class="icon icon--header-cart "
             viewBox="0 0 20 18"
           >
             <path

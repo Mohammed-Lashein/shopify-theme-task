@@ -614,12 +614,12 @@ video {
   width: 21px;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .-translate-x-full {
@@ -655,6 +655,12 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(var(--nav-txt-row-gap) * var(--tw-space-x-reverse));
   margin-left: calc(var(--nav-txt-row-gap) * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
 .rounded-full {
@@ -700,17 +706,17 @@ video {
   padding-bottom: var(--nav-padding-y);
 }
 
-.text-\[9px\] {
-  font-size: 9px;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.py-\[21px\] {
+  padding-top: 21px;
+  padding-bottom: 21px;
 }
 
 .text-\[18px\] {
   font-size: 18px;
+}
+
+.text-\[9px\] {
+  font-size: 9px;
 }
 
 .font-bold {
@@ -739,14 +745,6 @@ video {
   opacity: 0.3;
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 /* .custom-transition {
     transition-property: width;
     transition: var(--transition);
@@ -759,6 +757,7 @@ video {
   --nav-padding-y: 20px;
   --nav-txt-row-gap: 32px;
   /* --transition: 1s ease-in-out; */
+  --bezier: cubic-bezier(.75, 0, .175, 1);
 }
 
 body {
@@ -789,7 +788,13 @@ li:hover::after {
 } */
 
 .mobile-menu {
-  transition: transform .6s cubic-bezier(.75,0,.175,1), opacity .6s cubic-bezier(.75,0,.175,1);
+  transform: translateX(-100%);
+  transition: transform .6s var(--bezier), opacity .6s var(--bezier);
+  display: block;
+}
+
+.drawer.open+.mobile-menu {
+  transform: translateX(0);
 }
 
 .animated-plus {
@@ -826,18 +831,86 @@ li:hover::after {
   /* this is the vertical bar, but the horizontal bar after rotation */
 }
 
-.animated-plus.open {
+.animated-plus-btn .animated-plus.open {
   transform: rotate(360deg);
   transform: rotate(180deg);
 }
 
-.animated-plus.open::after {
+.animated-plus-btn .animated-plus.open::after {
   opacity: 0;
 }
 
 /* .animate-plus::before {
   transform: rotate(0deg);
 } */
+
+/* fadein */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-110%);
+    background-color: coral;
+  }
+
+  10% {
+    opacity: .2;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    background-color: khaki;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-110%);
+  }
+}
+
+.animated-plus-btn {
+  /* /* transition: all 6s cubic-bezier(.75,0,.175,1);  */
+  /* transform: translateX(-110%);  */
+  opacity: 1;
+  will-change: transform, opacity;
+  /* animation: fadeIn 1s forwards; */
+  /* using animation property here is a bad idea as we won't see the animation . 
+  The proper usage is to add the animation property to  .animated-plus-btn when the drawer has the open class*/
+}
+
+/* 
+      NOt working !!!!!!
+
+.drawer.hidden+.mobile-menu .animated-plus-btn {
+  animation: fadeOut 4s linear forwards;
+} */
+
+.drawer.open+.mobile-menu .animated-plus-btn {
+  animation: fadeIn var(--bezier) 1s;
+}
+
+.drawer.open+.mobile-menu ul li:nth-child(1) .animated-plus-btn {
+  animation-delay: 100ms;
+}
+
+.drawer.open+.mobile-menu ul li:nth-child(2) .animated-plus-btn {
+  animation-delay: 200ms;
+}
+
+.drawer.open+.mobile-menu ul li:nth-child(3) .animated-plus-btn {
+  animation-delay: 300ms;
+}
+
+.drawer.open+.mobile-menu ul li:nth-child(4) .animated-plus-btn {
+  animation-delay: 400ms;
+}
 
 .\*\:mr-\[--nav-txt-row-gap\] > * {
   margin-right: var(--nav-txt-row-gap);
@@ -961,5 +1034,3 @@ li:hover::after {
     display: none;
   }
 }
-
-

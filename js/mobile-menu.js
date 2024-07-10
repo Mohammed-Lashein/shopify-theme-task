@@ -13,11 +13,13 @@ const mobileMenu = document.querySelector(".mobile-menu")
 
 function openmobileDrawer() {
   mobileDrawer.classList.remove("hidden")
-  mobileMenu.style.transform = "translateX(0)";
+  mobileDrawer.classList.add("open")
+  // mobileMenu.style.transform = "translateX(0)";
 }
 function closemobileDrawer() {
-  mobileMenu.style.transform = "translateX(-100%)"
+  mobileDrawer.classList.remove("open")
   mobileDrawer.classList.add("hidden")
+  // mobileMenu.style.transform = ""
 }
 
 menuBtn.addEventListener("click", openmobileDrawer)
@@ -25,12 +27,15 @@ closeMenuBtn.addEventListener('click', closemobileDrawer)
 mobileDrawerOverlay.addEventListener('click', closemobileDrawer)
 
 // animated plus
-const animatedPlusBtn = document.querySelector(".animated-plus-btn")
-const animatedPlus = document.querySelector(".animated-plus");
+const animatedPlusBtns = document.querySelectorAll(".animated-plus-btn")
+const animatedPlusSpans = document.querySelectorAll(".animated-plus");
 
-function toggleAnimatedPlus() {
-  animatedPlus.classList.toggle("open")
+
+function toggleAnimatedPlus(i) {
+  animatedPlusSpans[i].classList.toggle("open")
 }
-animatedPlusBtn.addEventListener('click', toggleAnimatedPlus)
+animatedPlusBtns.forEach((btn,i) => {
+  btn.addEventListener("click", () => toggleAnimatedPlus(i))
+})
 
 
