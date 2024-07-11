@@ -150,37 +150,14 @@
     </section>
   </nav>
 
-  <!-- <aside class='absolute top-0 hidden w-screen h-screen drawer'>
-    <span class='absolute top-0 w-screen h-screen bg-black opacity-30 mobile-menu__overlay'>
-    </span>
-      <div class='absolute z-10 w-1/2 h-full bg-white mobile-menu'>
-        <section class='px-10 py-6'>
-          <button class='close-btn'>
-            <svg
-              focusable="false"
-              width="14"
-              height="14"
-              class="icon icon--close"
-              viewBox="0 0 14 14"
-            >
-              <path
-                d="M13 13L1 1M13 1L1 13"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-              ></path>
-            </svg>
-          </button>
-        </section>
-      </div>
-      
-    </aside> -->
-
-
+  <!-- aside contains the mobile-menu__overlay (faint screen) -->
   <aside class="absolute top-0 hidden w-screen h-screen drawer">
     <span class="absolute top-0 w-screen h-screen bg-black opacity-30 mobile-menu__overlay"></span>
   </aside>
+
+  <!-- .mobile-menu is the container for the mobile navigation -->
   <div class="absolute top-0 z-10 block w-1/2 h-full -translate-x-full bg-white mobile-menu">
+    <!-- close btn section -->
     <section class="px-10 py-6">
       <button class="close-btn">
         <!-- close btn -->
@@ -202,42 +179,63 @@
 
     </section>
 
+    <!-- menu items btns section -->
     <section class='px-6'>
       <ul class='divide-y '>
         <li class='py-[21px]'>
-          <button class='flex items-center justify-between w-full animated-plus-btn'>
+          <button class='flex items-center justify-between w-full text-lg animated-plus-btn'>
             <p class='font-bold uppercase '>
               shop by category
             </p>
             <span class='animated-plus text-[18px]'></span>
           </button>
+          <div class='h-0 overflow-hidden items-to-buy-container'>
+            <p class='p-4 items-to-buy'>
+              items to buy
+            </p>
+          </div>
         </li>
 
         <li class='py-[21px]'>
-          <button class='flex items-center justify-between w-full animated-plus-btn'>
+          <button class='flex items-center justify-between w-full text-lg animated-plus-btn'>
             <p class='font-bold uppercase '>
               shop by device
             </p>
             <span class='animated-plus text-[18px]'></span>
           </button>
+          <div class='h-0 overflow-hidden items-to-buy-container'>
+            <p class='p-4 items-to-buy'>
+              items to buy
+            </p>
+          </div>
         </li>
 
         <li class='py-[21px]'>
-          <button class='flex items-center justify-between w-full animated-plus-btn'>
+          <button class='flex items-center justify-between w-full text-lg animated-plus-btn'>
             <p class='font-bold uppercase '>
               collections
             </p>
             <span class='animated-plus text-[18px]'></span>
           </button>
+          <div class='h-0 overflow-hidden items-to-buy-container'>
+            <p class='p-4 items-to-buy'>
+              items to buy
+            </p>
+          </div>
         </li>
 
         <li class='py-[21px]'>
-          <button class='flex items-center justify-between w-full animated-plus-btn'>
+          <button class='flex items-center justify-between w-full text-lg animated-plus-btn'>
             <p class='font-bold uppercase '>
               more
             </p>
             <span class='animated-plus text-[18px]'></span>
           </button>
+          <div class='h-0 overflow-hidden items-to-buy-container'>
+            <p class='p-4 items-to-buy'>
+              items to buy
+            </p>
+          </div>
         </li>
 
       </ul>

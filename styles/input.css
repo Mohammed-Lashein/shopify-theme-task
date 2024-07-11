@@ -4,11 +4,9 @@
 
 :root {
   --nav-background: rgb(40, 40, 40);
-  --nav-color: white;
   --nav-padding-x: 40px;
   --nav-padding-y: 20px;
   --nav-txt-row-gap: 32px;
-  /* --transition: 1s ease-in-out; */
   --bezier: cubic-bezier(.75, 0, .175, 1);
 }
 
@@ -16,15 +14,7 @@ body {
   font-family: sans-serif;
 }
 
-@layer utilities {
-  /* .custom-transition {
-    transition-property: width;
-    transition: var(--transition);
-  } */
-
-}
-
-/* navbar transition  */
+/* navbar transition : Kept just for a reference as css blocks are clearer than cluttered tailwind classes (at least for visualizing the styles)  */
 /* li {
   position: relative;
 }
@@ -60,7 +50,7 @@ li:hover::after {
   width: 10px;
   height: 10px;
   position: relative;
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transition: transform .6s var(--bezier), opacity .6s var(--bezier);
 }
 
 .animated-plus::before,
@@ -68,11 +58,9 @@ li:hover::after {
   content: "";
   background-color: currentColor;
   transition: transform .4s ease-in-out, opacity .4s ease-in-out;
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
   position: absolute;
   top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -50%) rotate(-90deg); */
   transform: translate(-50%, -50%);
 }
 
@@ -91,7 +79,6 @@ li:hover::after {
 }
 
 .animated-plus-btn .animated-plus.open {
-  transform: rotate(360deg);
   transform: rotate(180deg);
 }
 
@@ -99,16 +86,13 @@ li:hover::after {
   opacity: 0;
 }
 
-/* .animate-plus::before {
-  transform: rotate(0deg);
-} */
+/* animating mobile menu items appearance start */
 
 /* fadein */
 @keyframes fadeIn {
   0% {
     opacity: 0;
     transform: translateX(-110%);
-    background-color: coral;
   }
 
   10% {
@@ -118,24 +102,10 @@ li:hover::after {
   100% {
     opacity: 1;
     transform: translateX(0);
-    background-color: khaki;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-110%);
   }
 }
 
 .animated-plus-btn {
-  /* /* transition: all 6s cubic-bezier(.75,0,.175,1);  */
-  /* transform: translateX(-110%);  */
   opacity: 1;
   will-change: transform, opacity;
   /* animation: fadeIn 1s forwards; */
@@ -143,14 +113,8 @@ li:hover::after {
   The proper usage is to add the animation property to  .animated-plus-btn when the drawer has the open class*/
 }
 
-/* 
-      NOt working !!!!!!
-
-.drawer.hidden+.mobile-menu .animated-plus-btn {
-  animation: fadeOut 4s linear forwards;
-} */
 .drawer.open+.mobile-menu .animated-plus-btn {
-  animation: fadeIn var(--bezier) 1s;
+  animation: fadeIn var(--bezier) 1s backwards;
 }
 
 .drawer.open+.mobile-menu ul li:nth-child(1) .animated-plus-btn {
@@ -168,3 +132,17 @@ li:hover::after {
 .drawer.open+.mobile-menu ul li:nth-child(4) .animated-plus-btn {
   animation-delay: 400ms;
 }
+
+/* animating mobile menu items appearance end */
+
+/* toggling appearance of items to buy based on clicking animated-plus-btn (start) */
+.items-to-buy-container {
+  transition: height .6s var(--bezier);
+}
+
+.animated-plus-btn:has(.animated-plus.open)+.items-to-buy-container {
+  height: 50px !important;
+  /* Note number 7 in lessons-learnt.md has greater details */
+}
+
+/* toggling appearance of items to buy based on clicking animated-plus-btn (end) */

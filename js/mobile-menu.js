@@ -5,21 +5,13 @@ const mobileDrawer = document.querySelector(".drawer")
 const mobileMenu = document.querySelector(".mobile-menu")
 
 
-// To check that elements are present
-// console.log(menuBtn);
-// console.log(mobileDrawerOverlay);
-// console.log(closeMenuBtn);
-// console.log(mobileDrawer);
-
 function openmobileDrawer() {
   mobileDrawer.classList.remove("hidden")
   mobileDrawer.classList.add("open")
-  // mobileMenu.style.transform = "translateX(0)";
 }
 function closemobileDrawer() {
   mobileDrawer.classList.remove("open")
   mobileDrawer.classList.add("hidden")
-  // mobileMenu.style.transform = ""
 }
 
 menuBtn.addEventListener("click", openmobileDrawer)
