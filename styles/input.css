@@ -8,6 +8,7 @@
   --nav-padding-y: 20px;
   --nav-txt-row-gap: 32px;
   --bezier: cubic-bezier(.75, 0, .175, 1);
+  --button-background: 64, 93, 230;
 }
 
 body {
@@ -133,6 +134,21 @@ li:hover::after {
   animation-delay: 400ms;
 }
 
+@keyframes fadeInY {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.drawer.open+.mobile-menu .user-account {
+  animation: fadeInY var(--bezier) .6s backwards;
+  animation-delay: 1s;
+}
+
 /* animating mobile menu items appearance end */
 
 /* toggling appearance of items to buy based on clicking animated-plus-btn (start) */
@@ -146,3 +162,96 @@ li:hover::after {
 }
 
 /* toggling appearance of items to buy based on clicking animated-plus-btn (end) */
+
+/* cart start */
+.cart {
+  transition: transform .6s var(--bezier), opacity .6s var(--bezier);
+  display: block;
+}
+
+.cart-drawer.open+.cart {
+  transform: translateX(0);
+}
+
+.btn-wrapper a {
+  background-image: linear-gradient(178deg, rgb(var(--button-background)), rgb(var(--button-background)) 10%, #00000012 10% 100%), linear-gradient(rgb(var(--button-background)), rgb(var(--button-background)));
+  background-position: 100% -100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 200%, 100% 100%;
+  transition: background-position .3s cubic-bezier(.215, .61, .355, 1);
+  line-height: 52px;
+}
+
+.btn-wrapper a:hover {
+  background-position: 100% 25%, 100% 100%;
+}
+
+/* cart end */
+
+/* swiper start */
+:root {
+  --swiper-pagination-bullet-inactive-opacity: .6;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  max-height: 570px;
+  max-width: 1000px;
+  /* overflow: hidden; */
+  /* This class has overflow: hidden by default from the styles provided by swiperjs */
+  /* overflow: visible !important; */
+
+}
+
+.swiper-slide {
+
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.swiper-slide img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2rem !important;
+}
+
+.swiper-pagination-bullet {
+  position: relative;
+  background: rgba(207, 203, 203, 1) !important;
+  height: 2px !important;
+  width: 48px !important;
+  overflow: visible !important;
+  border-radius: 2px !important;
+  margin: 0 10px;
+
+}
+
+.swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: dodgerblue;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active.swiper-pagination-bullet::before {
+  transition: width 5s linear;
+  width: 100%;
+}
+/* swiper end */
