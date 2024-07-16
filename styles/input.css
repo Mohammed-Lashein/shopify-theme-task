@@ -152,6 +152,7 @@ li:hover::after {
 /* animating mobile menu items appearance end */
 
 /* toggling appearance of items to buy based on clicking animated-plus-btn (start) */
+
 .items-to-buy-container {
   transition: height .6s var(--bezier);
 }
@@ -254,4 +255,5 @@ li:hover::after {
   transition: width 5s linear;
   width: 100%;
 }
+
 /* swiper end */
